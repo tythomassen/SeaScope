@@ -1,0 +1,36 @@
+import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet weak var dataLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Define the URL of your Flask server
+        let serverURL = URL(string: "http://127.0.0.1:8080")!
+
+        // Create a URLSession task to fetch the data
+        let task = URLSession.shared.dataTask(with: serverURL) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200,
+               let data = data,
+               let content = String(data: data, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    self.dataLabel.text = content
+                }
+            }
+        }
+
+        // Start the URLSession task
+        task.resume()
+    }
+
+    @IBAction func buttonPressed(_ sender: Any) {
+        // Code to execute when the button is pressed
+        // You can put your data retrieval or processing logic here
+    }
+}
