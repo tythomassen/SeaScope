@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "bea1f47d-f508-420a-a753-ec2049eb8a5d",
+		"name": "arduino cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "JM99iBstvKkTbqM4VL4HVSJ07GPbLaMj",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "YNzXXh1xBjn8qCvRMoO31u48SetyfR7mTUcbcPanIgSvnIco8PGsA3hOYAnjsUKd",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "https://api2.arduino.cc/iot",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api2.arduino.cc/iot/v1/clients/token",
+					"protocol": "https",
+					"host": [
+						"api2",
+						"arduino",
+						"cc"
+					],
+					"path": [
+						"iot",
+						"v1",
+						"clients",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get things",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaTIuYXJkdWluby5jYy9pb3QiLCJhenAiOiJKTTk5aUJzdHZLa1RicU00Vkw0SFZTSjA3R1BiTGFNaiIsImV4cCI6MTcxMTM4NTY3MiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiaHR0cDovL2FyZHVpbm8uY2MvY2xpZW50X2lkIjoiU2VhU2NvcGVfQVBJIiwiaHR0cDovL2FyZHVpbm8uY2MvaWQiOiJjZjc0OTdmZi00NWViLTQ3MjUtODczMi0yYzIxMjA0NGM0ODgiLCJodHRwOi8vYXJkdWluby5jYy9yYXRlbGltaXQiOjEwLCJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6InR5dGhvbW1hc3QiLCJpYXQiOjE3MTEzODUzNzIsInN1YiI6IkpNOTlpQnN0dktrVGJxTTRWTDRIVlNKMDdHUGJMYU1qQGNsaWVudHMifQ.UUCIybibfFcdJlyaqBpxt0J8gLaostLLapB3GJ7vj8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api2.arduino.cc/iot/v2/things",
+					"protocol": "https",
+					"host": [
+						"api2",
+						"arduino",
+						"cc"
+					],
+					"path": [
+						"iot",
+						"v2",
+						"things"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get properties for thing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaTIuYXJkdWluby5jYy9pb3QiLCJhenAiOiJKTTk5aUJzdHZLa1RicU00Vkw0SFZTSjA3R1BiTGFNaiIsImV4cCI6MTcxMTM4NTY3MiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiaHR0cDovL2FyZHVpbm8uY2MvY2xpZW50X2lkIjoiU2VhU2NvcGVfQVBJIiwiaHR0cDovL2FyZHVpbm8uY2MvaWQiOiJjZjc0OTdmZi00NWViLTQ3MjUtODczMi0yYzIxMjA0NGM0ODgiLCJodHRwOi8vYXJkdWluby5jYy9yYXRlbGltaXQiOjEwLCJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6InR5dGhvbW1hc3QiLCJpYXQiOjE3MTEzODUzNzIsInN1YiI6IkpNOTlpQnN0dktrVGJxTTRWTDRIVlNKMDdHUGJMYU1qQGNsaWVudHMifQ.UUCIybibfFcdJlyaqBpxt0J8gLaostLLapB3GJ7vj8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api2.arduino.cc/iot/v2/things/fb5384e2-9048-4d48-9ff5-867c01326db9/properties",
+					"protocol": "https",
+					"host": [
+						"api2",
+						"arduino",
+						"cc"
+					],
+					"path": [
+						"iot",
+						"v2",
+						"things",
+						"fb5384e2-9048-4d48-9ff5-867c01326db9",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get property timeseries for thing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaTIuYXJkdWluby5jYy9pb3QiLCJhenAiOiJKTTk5aUJzdHZLa1RicU00Vkw0SFZTSjA3R1BiTGFNaiIsImV4cCI6MTcxMTM4NjUxNSwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiaHR0cDovL2FyZHVpbm8uY2MvY2xpZW50X2lkIjoiU2VhU2NvcGVfQVBJIiwiaHR0cDovL2FyZHVpbm8uY2MvaWQiOiJjZjc0OTdmZi00NWViLTQ3MjUtODczMi0yYzIxMjA0NGM0ODgiLCJodHRwOi8vYXJkdWluby5jYy9yYXRlbGltaXQiOjEwLCJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6InR5dGhvbW1hc3QiLCJpYXQiOjE3MTEzODYyMTUsInN1YiI6IkpNOTlpQnN0dktrVGJxTTRWTDRIVlNKMDdHUGJMYU1qQGNsaWVudHMifQ.03R6WzXW-EzTcZIponurAOaOEcvXmtlNDU5G52ahr1s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api2.arduino.cc/iot/v2/things/fb5384e2-9048-4d48-9ff5-867c01326db9/properties/14522f9f-71d3-4467-8437-987140aede5b/timeseries?aggregation=AVG&from=2024-01-01T00:00:00Z&to=2024-03-25T00:00:00Z&interval=300",
+					"protocol": "https",
+					"host": [
+						"api2",
+						"arduino",
+						"cc"
+					],
+					"path": [
+						"iot",
+						"v2",
+						"things",
+						"fb5384e2-9048-4d48-9ff5-867c01326db9",
+						"properties",
+						"14522f9f-71d3-4467-8437-987140aede5b",
+						"timeseries"
+					],
+					"query": [
+						{
+							"key": "aggregation",
+							"value": "AVG"
+						},
+						{
+							"key": "from",
+							"value": "2024-01-01T00:00:00Z"
+						},
+						{
+							"key": "to",
+							"value": "2024-03-25T00:00:00Z"
+						},
+						{
+							"key": "interval",
+							"value": "300"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
